@@ -8,11 +8,7 @@
   "includeFork": false,
   "theme": "light.css",
   "types": [
-   "owner"
-  ],
-  "twitter": null,
-  "linkedin": "Tristan Lassiter",
-  "medium": null,
-  "dribbble": null
+   "all"
+  ]
  }
 ]
