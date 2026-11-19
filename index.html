@@ -4,9 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tristan Lassiter | Staff Technical Artist</title>
     <meta name="description" content="Tristan Lassiter, Staff Technical Artist at Meta Reality Labs. Real-time graphics, content pipelines, VR, and open-source tools.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="index.css">
     <style>
       #profile {
@@ -40,6 +38,17 @@
         line-height: 1.55;
         margin: 3vh 0 0;
         max-width: 58ch;
+      }
+
+      .shadle-link {
+        color: #42484b;
+        margin: 0 0 1.25rem;
+      }
+
+      .shadle-link a {
+        color: var(--text-color);
+        font-weight: 600;
+        text-underline-offset: 0.2em;
       }
 
       #professional-work,
@@ -152,9 +161,6 @@
   <link rel="icon" href="https://avatars.githubusercontent.com/u/50963416?v=4" type="image/png"></head>
 
   <body>
-    <div id="loading">
-      <div id="spinner"></div>
-    </div>
     <header id="profile">
       <div id="profile_img" style="background: url(https://avatars.githubusercontent.com/u/50963416?v=4) center;"></div>
       <div id="username">
@@ -233,6 +239,7 @@
       </section>
       <section id="work" aria-labelledby="projects-heading">
         <h2 id="projects-heading">Pinned Projects</h2>
+        <p class="shadle-link"><a href="https://lassiiter.github.io/shadle/">Play Shadle</a>, a daily GLSL shader challenge.</p>
         <div class="projects portfolio-grid" id="work_section">
           <a href="https://github.com/lassiiter/blender-geometry-nodes-to-unreal" target="_blank" rel="noopener">
             <section>
@@ -306,7 +313,7 @@
           </section>
         </div>
       </section>
-      <div id="blog_section">
+      <div id="blog_section" hidden>
         <h2>Blog.</h2>
         <div id="blogs"></div>
       </div>
@@ -314,21 +321,12 @@
         <a href="https://github.com/imfunniee" target="_blank" rel="noopener">made on earth by a human</a>
       </div>
     </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script type="text/javascript">
-      setTimeout(function() {
-        document.getElementById("loading").classList.add("animated");
-        document.getElementById("loading").classList.add("fadeOut");
-        setTimeout(function() {
-          document.getElementById("loading").classList.remove("animated");
-          document.getElementById("loading").classList.remove("fadeOut");
-          document.getElementById("loading").style.display = "none";
-        }, 800);
-      }, 1500);
       $.getJSON("blog.json", function(blog) {
         blog = blog || [];
         if (blog.length == 0) {
-          return (document.getElementById("blog_section").style.display =
-            "none");
+          return;
         }
         for (var i = 0; i < blog.length; i++) {
           $("#blogs").append(`
@@ -345,8 +343,7 @@
             </a>
             `);
         }
-      }).fail(function() {
-        return (document.getElementById("blog_section").style.display = "none");
+        document.getElementById("blog_section").hidden = false;
       });
     </script>
 
