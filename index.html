@@ -48,13 +48,11 @@
         padding: 4vh 0;
       }
 
-      .portfolio-grid .featured-work {
-        grid-column: 1 / -1;
-      }
-
       .portfolio-grid .role {
+        color: #50565a;
         font-size: 0.9375rem;
-        margin: 0.4rem 0 0;
+        line-height: 1.45;
+        margin: 0.25rem 0 0;
       }
 
       .portfolio-grid {
@@ -62,6 +60,26 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 1.25rem;
         margin-left: 0;
+      }
+
+      #professional-work .portfolio-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.875rem;
+      }
+
+      .experience-heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 0.375rem 1.25rem;
+      }
+
+      .experience-date {
+        flex-shrink: 0;
+        color: #50565a;
+        font-size: 0.875rem;
+        font-variant-numeric: tabular-nums;
+        margin: 0;
       }
 
       .portfolio-grid > a {
@@ -83,15 +101,23 @@
       }
 
       .portfolio-grid .section_title {
+        line-height: 1.25;
         margin: 0;
+        padding: 0;
       }
 
       .portfolio-grid .about_section {
-        margin: 0.75rem 0;
+        color: #42484b;
+        font-family: inherit;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.6;
+        margin: 0.625rem 0 0;
+        max-width: 72ch;
       }
 
       .portfolio-grid .bottom_section {
-        margin: 0;
+        margin: 0.75rem 0 0;
       }
 
       .portfolio-grid .bottom_section a {
@@ -115,6 +141,13 @@
           grid-template-columns: 1fr;
         }
       }
+
+      @media (max-width: 520px) {
+        .experience-heading {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
     </style>
   <link rel="icon" href="https://avatars.githubusercontent.com/u/50963416?v=4" type="image/png"></head>
 
@@ -134,14 +167,70 @@
         <span><i class="fas fa-palette" aria-hidden="true"></i> <a href="https://lassiter.artstation.com/">ArtStation</a></span>
       </div>
       <nav id="profile-links" aria-label="Portfolio sections">
-        <a href="#work">Projects</a>
         <a href="#professional-work">Experience</a>
+        <a href="#work">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#education">Education</a>
       </nav>
     </header>
     <main id="display">
       <p class="intro">I build real-time graphics and content pipelines for games and VR. My work spans rendering performance, USD asset pipelines, material systems, and AI-assisted creation tools.</p>
+      <section id="professional-work" aria-labelledby="professional-heading">
+        <h2 id="professional-heading">Professional Work</h2>
+        <div class="projects portfolio-grid">
+          <section>
+            <header class="experience-heading">
+              <div>
+                <h3 class="section_title">Meta Reality Labs</h3>
+                <p class="role">Staff Technical Artist</p>
+              </div>
+              <p class="experience-date">At Meta since 2022</p>
+            </header>
+            <p class="about_section">Lead teams prototyping AI-assisted game creation and building tools for artists. Previously led technical art for Quest VR environments, including five homes shipped for Meta Connect 2025. Built USD asset and material workflows and profiled rendering performance for standalone VR.</p>
+          </section>
+          <section>
+            <header class="experience-heading">
+              <div>
+                <h3 class="section_title">Duelyst II</h3>
+                <p class="role">Dream Sloth Games</p>
+              </div>
+              <p class="experience-date">2021&ndash;2023</p>
+            </header>
+            <p class="about_section">Contributed client improvements, UX design, and shaders to the competitive tactics game and helped prepare its Kickstarter campaign and beta launch.</p>
+            <p class="bottom_section"><a href="https://store.steampowered.com/app/2004320/Duelyst_II/">Duelyst II on Steam</a></p>
+          </section>
+          <section>
+            <header class="experience-heading">
+              <div>
+                <h3 class="section_title">Bayer</h3>
+                <p class="role">Software Engineer I &amp; II / 3D Generalist</p>
+              </div>
+              <p class="experience-date">2019&ndash;2022</p>
+            </header>
+            <p class="about_section">Led development of a Unity VR equipment training platform for Bayer Crop Science, turning engineering CAD data into interactive exercises and launching a North American pilot.</p>
+          </section>
+          <section>
+            <header class="experience-heading">
+              <div>
+                <h3 class="section_title">Polymorphic Games</h3>
+                <p class="role">Technical Artist</p>
+              </div>
+              <p class="experience-date">2017&ndash;2019</p>
+            </header>
+            <p class="about_section">Created and optimized real-time environments, props, and shaders for Project Hastur and improved the terrain workflow for faster level iteration.</p>
+          </section>
+          <section>
+            <header class="experience-heading">
+              <div>
+                <h3 class="section_title">Fenway Group</h3>
+                <p class="role">Associate Software Engineer</p>
+              </div>
+              <p class="experience-date">2016&ndash;2017</p>
+            </header>
+            <p class="about_section">Built internal resource-management applications and shipped the company website.</p>
+          </section>
+        </div>
+      </section>
       <section id="work" aria-labelledby="projects-heading">
         <h2 id="projects-heading">Pinned Projects</h2>
         <div class="projects portfolio-grid" id="work_section">
@@ -187,37 +276,6 @@
               <p class="bottom_section">Python · Image processing</p>
             </section>
           </a>
-        </div>
-      </section>
-      <section id="professional-work" aria-labelledby="professional-heading">
-        <h2 id="professional-heading">Professional Work</h2>
-        <div class="projects portfolio-grid">
-          <section class="featured-work">
-            <h3 class="section_title">Meta Reality Labs</h3>
-            <p class="role">Staff Technical Artist &middot; At Meta since 2022</p>
-            <p class="about_section">Lead teams prototyping AI-assisted game creation and building tools for artists. Previously led technical art for Quest VR environments, including five homes shipped for Meta Connect 2025. Built USD asset and material workflows and profiled rendering performance for standalone VR.</p>
-          </section>
-          <section>
-            <h3 class="section_title">Duelyst II</h3>
-            <p class="role">Dream Sloth Games &middot; 2021&ndash;2023</p>
-            <p class="about_section">Contributed client improvements, UX design, and shaders to the competitive tactics game and helped prepare its Kickstarter campaign and beta launch.</p>
-            <p class="bottom_section"><a href="https://store.steampowered.com/app/2004320/Duelyst_II/">Duelyst II on Steam</a></p>
-          </section>
-          <section>
-            <h3 class="section_title">Bayer</h3>
-            <p class="role">Software Engineer I &amp; II / 3D Generalist &middot; 2019&ndash;2022</p>
-            <p class="about_section">Led development of a Unity VR equipment training platform for Bayer Crop Science, turning engineering CAD data into interactive exercises and launching a North American pilot.</p>
-          </section>
-          <section>
-            <h3 class="section_title">Polymorphic Games</h3>
-            <p class="role">Technical Artist &middot; 2017&ndash;2019</p>
-            <p class="about_section">Created and optimized real-time environments, props, and shaders for Project Hastur and improved the terrain workflow for faster level iteration.</p>
-          </section>
-          <section>
-            <h3 class="section_title">Fenway Group</h3>
-            <p class="role">Associate Software Engineer &middot; 2016&ndash;2017</p>
-            <p class="about_section">Built internal resource-management applications and shipped the company website.</p>
-          </section>
         </div>
       </section>
       <section id="skills" aria-labelledby="skills-heading">
