@@ -2,132 +2,260 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>lassiiter</title>
+    <title>Tristan Lassiter | Staff Technical Artist</title>
+    <meta name="description" content="Tristan Lassiter, Staff Technical Artist at Meta Reality Labs. Real-time graphics, content pipelines, VR, and open-source tools.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/magic-grid/dist/magic-grid.min.js"></script>
     <link rel="stylesheet" href="index.css">
-  <link rel="icon" href="https://avatars1.githubusercontent.com/u/50963416?v=4" type="image/png"></head>
+    <style>
+      #profile {
+        background-color: #263534;
+      }
+
+      #username h1 {
+        font-size: 24px;
+        margin: 0;
+      }
+
+      #display h2 {
+        font-family: "Questrial", sans-serif;
+        font-size: clamp(2rem, 4vw, 3.125rem);
+        margin: 0 0 1.5rem;
+      }
+
+      #profile-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1rem;
+      }
+
+      #profile-links a {
+        color: inherit;
+        text-underline-offset: 0.2em;
+      }
+
+      .intro {
+        font-size: 1.125rem;
+        line-height: 1.55;
+        margin: 3vh 0 0;
+        max-width: 58ch;
+      }
+
+      #professional-work,
+      #skills,
+      #education {
+        padding: 4vh 0;
+      }
+
+      .portfolio-grid .featured-work {
+        grid-column: 1 / -1;
+      }
+
+      .portfolio-grid .role {
+        font-size: 0.9375rem;
+        margin: 0.4rem 0 0;
+      }
+
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.25rem;
+        margin-left: 0;
+      }
+
+      .portfolio-grid > a {
+        width: auto;
+      }
+
+      .portfolio-grid section {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 1.125rem 1.25rem;
+        width: 100%;
+      }
+
+      .portfolio-grid > section:hover {
+        border-color: rgb(0 0 0 / 8%);
+        box-shadow: none;
+        cursor: auto;
+        transform: none;
+      }
+
+      .portfolio-grid .section_title {
+        margin: 0;
+      }
+
+      .portfolio-grid .about_section {
+        margin: 0.75rem 0;
+      }
+
+      .portfolio-grid .bottom_section {
+        margin: 0;
+      }
+
+      .portfolio-grid .bottom_section a {
+        color: inherit;
+        display: inline;
+        text-decoration: underline;
+        width: auto;
+      }
+
+      @media (max-width: 800px) {
+        #profile {
+          height: auto;
+          min-height: 45vh;
+        }
+
+        #profile-links {
+          justify-content: center;
+        }
+
+        .portfolio-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/50963416?v=4" type="image/png"></head>
 
   <body>
     <div id="loading">
       <div id="spinner"></div>
     </div>
-    <div id="profile">
-      <div id="profile_img" style="background: url(https://avatars1.githubusercontent.com/u/50963416?v=4) center;"></div>
-      <div id="username"><span style="display:block;">Tristan Lassiter</span><a href="https://github.com/lassiiter">@lassiiter</a></div>
-      <div id="userbio" style="display: none;">undefined</div>
+    <header id="profile">
+      <div id="profile_img" style="background: url(https://avatars.githubusercontent.com/u/50963416?v=4) center;"></div>
+      <div id="username">
+        <h1>Tristan Lassiter</h1>
+        <a href="https://github.com/lassiiter">@lassiiter</a>
+      </div>
+      <div id="userbio">Staff Technical Artist<br>Meta Reality Labs</div>
       <div id="about">
-                <span style="display:block;"><i class="fas fa-users"></i> &nbsp; Bayer</span>
-                <span style="display:none;"><i class="fas fa-envelope"></i> &nbsp; null</span>
-                <span style="display:block;"><i class="fas fa-link"></i> &nbsp; <a href="https://github.com/lassiiter">https://github.com/lassiiter</a></span>
-                <span style="display:block;"><i class="fas fa-map-marker-alt"></i> &nbsp;&nbsp; STL</span>
-                <span style="display:none;"><i class="fas fa-user-tie"></i> &nbsp;&nbsp; Available for hire</span>
-                <div class="socials">
-                <span style="display:none !important;"><a href="https://www.twitter.com/null" target="_blank" class="socials"><i class="fab fa-twitter"></i></a></span>
-                <span style="display:none !important;"><a href="https://www.dribbble.com/null" target="_blank" class="socials"><i class="fab fa-dribbble"></i></a></span>
-                <span style="display:none !important;"><a href="https://www.linkedin.com/in/null/" target="_blank" class="socials"><i class="fab fa-linkedin-in"></i></a></span>
-                <span style="display:none !important;"><a href="https://www.medium.com/@null/" target="_blank" class="socials"><i class="fab fa-medium-m"></i></a></span>
-                </div>
-                </div>
-    </div>
-    <div id="display">
-      <div id="work">
-        <h1>Work.</h1>
-        <div class="projects" id="work_section">
-                        <a href="https://github.com/lassiiter/unity-raymarched-metaball" target="_blank">
-                        <section>
-                            <div class="section_title">unity-raymarched-metaball</div>
-                            <div class="about_section">
-                            <span style="display:block;">Animating Pictures with Stochastic Motion Textures</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; Python</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/lassiiter/stochastic-motion-textures" target="_blank">
-                        <section>
-                            <div class="section_title">stochastic-motion-textures</div>
-                            <div class="about_section">
-                            <span style="display:block;">Animating Pictures with Stochastic Motion Textures</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; Python</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/lassiiter/dynamic-image-resizing" target="_blank">
-                        <section>
-                            <div class="section_title">dynamic-image-resizing</div>
-                            <div class="about_section">
-                            <span style="display:block;">Seam Carving for Content Aware Image Resizing</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:none;"><i class="fas fa-code"></i>&nbsp; null</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/lassiiter/LACMA-Exhibit-Design" target="_blank">
-                        <section>
-                            <div class="section_title">LACMA-Exhibit-Design</div>
-                            <div class="about_section">
-                            <span style="display:block;">Exhibit design of famous artist Riusuke Fukahori</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:none;"><i class="fas fa-code"></i>&nbsp; null</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-                        <a href="https://github.com/lassiiter/realtime-shadow-based-nav-mesh" target="_blank">
-                        <section>
-                            <div class="section_title">realtime-shadow-based-nav-mesh</div>
-                            <div class="about_section">
-                            <span style="display:block;">A shadow based NavMesh System</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:none;"><i class="fas fa-code"></i>&nbsp; null</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a>
-                        
-                        <a href="https://github.com/lassiiter/lassiiter.github.io" target="_blank">
-                        <section>
-                            <div class="section_title">lassiiter.github.io</div>
-                            <div class="about_section">
-                            <span style="display:block;">Personal website</span>
-                            </div>
-                            <div class="bottom_section">
-                                <span style="display:none;"><i class="fas fa-code"></i>&nbsp; null</span>
-                                <span><i class="fas fa-star"></i>&nbsp; 0</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; 0</span>
-                            </div>
-                        </section>
-                        </a></div>
+        <span><i class="fab fa-linkedin-in" aria-hidden="true"></i> <a href="https://www.linkedin.com/in/tristan-lassiter">LinkedIn</a></span>
+        <span><i class="fas fa-palette" aria-hidden="true"></i> <a href="https://lassiter.artstation.com/">ArtStation</a></span>
       </div>
-      <div id="forks" style="display:none;">
-        <h1>Forks.</h1>
-        <div class="projects" id="forks_section"></div>
-      </div>
+      <nav id="profile-links" aria-label="Portfolio sections">
+        <a href="#work">Projects</a>
+        <a href="#professional-work">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+      </nav>
+    </header>
+    <main id="display">
+      <p class="intro">I build real-time graphics and content pipelines for games and VR. My work spans rendering performance, USD asset pipelines, material systems, and AI-assisted creation tools.</p>
+      <section id="work" aria-labelledby="projects-heading">
+        <h2 id="projects-heading">Pinned Projects</h2>
+        <div class="projects portfolio-grid" id="work_section">
+          <a href="https://github.com/lassiiter/blender-geometry-nodes-to-unreal" target="_blank" rel="noopener">
+            <section>
+              <h3 class="section_title">Geometry Nodes Bridge</h3>
+              <p class="about_section">Preview and bake Blender Geometry Nodes assets inside the Unreal Editor through a shared Blender worker.</p>
+              <p class="bottom_section">C++ · Unreal Engine · Blender</p>
+            </section>
+          </a>
+          <a href="https://github.com/lassiiter/opengl-rasterizer" target="_blank" rel="noopener">
+            <section>
+              <h3 class="section_title">OpenGL Rasterizer</h3>
+              <p class="about_section">Real-time physically based renderer with image-based lighting, HDR tone mapping, and interactive material controls.</p>
+              <p class="bottom_section">C++ · OpenGL</p>
+            </section>
+          </a>
+          <a href="https://github.com/lassiiter/comfyui-sapiens2" target="_blank" rel="noopener">
+            <section>
+              <h3 class="section_title">ComfyUI Sapiens2</h3>
+              <p class="about_section">ComfyUI nodes for human pose estimation, body-part segmentation, surface normals, and 3D pointmaps.</p>
+              <p class="bottom_section">Python · ComfyUI</p>
+            </section>
+          </a>
+          <a href="https://github.com/lassiiter/realtime-shadow-volume-nav-mesh" target="_blank" rel="noopener">
+            <section>
+              <h3 class="section_title">Real-Time Shadow Volume NavMesh</h3>
+              <p class="about_section">Builds a Unity navigation mesh in real time from occluded regions as lights and occluders move.</p>
+              <p class="bottom_section">C# · Unity</p>
+            </section>
+          </a>
+          <a href="https://github.com/lassiiter/unreal-texture-graph-to-material" target="_blank" rel="noopener">
+            <section>
+              <h3 class="section_title">Texture Graph Material Bridge</h3>
+              <p class="about_section">Links Unreal Texture Graph outputs to materials and refreshes the linked materials when the graph is saved.</p>
+              <p class="bottom_section">C++ · Unreal Engine</p>
+            </section>
+          </a>
+          <a href="https://github.com/lassiiter/seam-carving-image-resizing" target="_blank" rel="noopener">
+            <section>
+              <h3 class="section_title">Seam Carving Image Resizing</h3>
+              <p class="about_section">Shrinks and expands images by removing or inserting low-energy seams to preserve salient content.</p>
+              <p class="bottom_section">Python · Image processing</p>
+            </section>
+          </a>
+        </div>
+      </section>
+      <section id="professional-work" aria-labelledby="professional-heading">
+        <h2 id="professional-heading">Professional Work</h2>
+        <div class="projects portfolio-grid">
+          <section class="featured-work">
+            <h3 class="section_title">Meta Reality Labs</h3>
+            <p class="role">Staff Technical Artist &middot; At Meta since 2022</p>
+            <p class="about_section">Lead teams prototyping AI-assisted game creation and building tools for artists. Previously led technical art for Quest VR environments, including five homes shipped for Meta Connect 2025. Built USD asset and material workflows and profiled rendering performance for standalone VR.</p>
+          </section>
+          <section>
+            <h3 class="section_title">Duelyst II</h3>
+            <p class="role">Dream Sloth Games &middot; 2021&ndash;2023</p>
+            <p class="about_section">Contributed client improvements, UX design, and shaders to the competitive tactics game and helped prepare its Kickstarter campaign and beta launch.</p>
+            <p class="bottom_section"><a href="https://store.steampowered.com/app/2004320/Duelyst_II/">Duelyst II on Steam</a></p>
+          </section>
+          <section>
+            <h3 class="section_title">Bayer</h3>
+            <p class="role">Software Engineer I &amp; II / 3D Generalist &middot; 2019&ndash;2022</p>
+            <p class="about_section">Led development of a Unity VR equipment training platform for Bayer Crop Science, turning engineering CAD data into interactive exercises and launching a North American pilot.</p>
+          </section>
+          <section>
+            <h3 class="section_title">Polymorphic Games</h3>
+            <p class="role">Technical Artist &middot; 2017&ndash;2019</p>
+            <p class="about_section">Created and optimized real-time environments, props, and shaders for Project Hastur and improved the terrain workflow for faster level iteration.</p>
+          </section>
+          <section>
+            <h3 class="section_title">Fenway Group</h3>
+            <p class="role">Associate Software Engineer &middot; 2016&ndash;2017</p>
+            <p class="about_section">Built internal resource-management applications and shipped the company website.</p>
+          </section>
+        </div>
+      </section>
+      <section id="skills" aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Technical Skills</h2>
+        <div class="projects portfolio-grid">
+          <section>
+            <h3 class="section_title">Graphics &amp; Engineering</h3>
+            <p class="about_section">Unreal Engine, Unity, Godot, USD, OpenGL, Vulkan, C++, C#, Python, HLSL, GLSL, RenderDoc</p>
+          </section>
+          <section>
+            <h3 class="section_title">Art &amp; Pipeline Tools</h3>
+            <p class="about_section">Blender, Maya, Substance 3D, ZBrush, Photoshop, ComfyUI, Git, Perforce</p>
+          </section>
+        </div>
+      </section>
+      <section id="education" aria-labelledby="education-heading">
+        <h2 id="education-heading">Education</h2>
+        <div class="projects portfolio-grid">
+          <section>
+            <h3 class="section_title">Georgia Institute of Technology</h3>
+            <p class="role">2020&ndash;2021</p>
+            <p class="about_section">Graduate coursework in computer science</p>
+          </section>
+          <section>
+            <h3 class="section_title">University of Idaho</h3>
+            <p class="role">2015&ndash;2019</p>
+            <p class="about_section">B.S. in Virtual Technology &amp; Design</p>
+          </section>
+        </div>
+      </section>
       <div id="blog_section">
-        <h1>Blog.</h1>
+        <h2>Blog.</h2>
         <div id="blogs"></div>
       </div>
       <div id="footer">
-        <a href="https://github.com/imfunniee" target="_blank">made on earth by a human</a>
+        <a href="https://github.com/imfunniee" target="_blank" rel="noopener">made on earth by a human</a>
       </div>
-    </div>
+    </main>
     <script type="text/javascript">
       setTimeout(function() {
         document.getElementById("loading").classList.add("animated");
@@ -164,32 +292,5 @@
       });
     </script>
 
-    <script>
-      const magicProjectsGrid = new MagicGrid({
-        container: "#work_section",
-        animate: false,
-        gutter: 30, // default gutter size
-        static: true,
-        useMin: false,
-        maxColumns: 2,
-        useTransform: true
-      });
-
-      const magicForksGrid = new MagicGrid({
-        container: "#forks_section",
-        animate: false,
-        gutter: 30, // default gutter size
-        static: true,
-        useMin: false,
-        maxColumns: 2,
-        useTransform: true
-      });
-
-      $("document").ready(() => {
-        magicProjectsGrid.listen();
-        magicForksGrid.listen();
-      });
-    </script>
-  
-
-</body></html>
+  </body>
+</html>
